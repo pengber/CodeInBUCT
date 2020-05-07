@@ -124,7 +124,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="DFA.h" />
-    <ClInclude Include="error.h" />
     <ClInclude Include="LALR1.h" />
     <ClInclude Include="LL1.h" />
     <ClInclude Include="LR.h" />

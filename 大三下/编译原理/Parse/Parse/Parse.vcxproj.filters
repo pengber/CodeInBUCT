@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="error.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="LL1.h">
       <Filter>头文件</Filter>
     </ClInclude>
