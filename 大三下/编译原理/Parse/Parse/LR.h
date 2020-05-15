@@ -36,11 +36,7 @@ public:
 		this->set_first();
 		this->set_follow();
 		this->set_parse_col();						//设置分析表的表头，行就不用设置了，因为其行号就对应状态
-		this->print_terminal_and_nonTerminal();
-		this->print_grammar_of_extension();
-		this->print_ex_grammar();
-		this->print_first();
-		this->print_fllow();
+		
 	}
 	bool parse_string(vector<string> input);
 	void print_grammar_of_extension();

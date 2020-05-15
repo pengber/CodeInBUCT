@@ -35,8 +35,6 @@ public:
 	void print_terminal_and_nonTerminal();
 	void print_first();
 	void print_fllow();
-	//virtual void set_DFA();
-	//virtual void set_parse_table();
 
 
 	

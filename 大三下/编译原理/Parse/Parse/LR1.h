@@ -3,8 +3,6 @@
 
 class LR1 :public LR {
 protected:
-	//DFA_items get_valid_items();同理下
-	//void set_parse_table();没有必要写，直接用父类的此虚函数的内容就行，父类的虚函数也可以处理，只不过是子类有的时候就用子类的，没有的时候就用父类的
 	set<string> get_first(vector<string> gamma);	//重写Parse的get_first，有一点点变化
 	void merge_flag_of_items(vector<vector<string>>&);	//合并同一个DFA里面的除标志字符外都相等的项
 	vector<vector<string>> do_extence(vector<string> start);
@@ -15,8 +13,6 @@ public:
 	LR1(vector<vector<string>>grammar) :LR(grammar) {
 		this->set_DFA();
 		this->set_parse_table();
-		this->print_DFA();
-		this->print_parse_table();
 	}
 	
 

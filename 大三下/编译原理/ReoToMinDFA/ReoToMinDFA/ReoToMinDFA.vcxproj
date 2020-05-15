@@ -19,14 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="error.h" />
-    <ClInclude Include="LL1.h" />
     <ClInclude Include="NFA.h" />
-    <ClInclude Include="Parse.h" />
     <ClInclude Include="Re.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="源.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

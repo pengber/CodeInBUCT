@@ -41,7 +41,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LALR1.cpp">
+    <ClCompile Include="SLR1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

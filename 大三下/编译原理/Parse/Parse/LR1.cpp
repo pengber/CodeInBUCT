@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <fstream>
 #include "LR1.h"
 using namespace std;
 /*
@@ -34,7 +35,7 @@ L -> a R | b
 R -> L
 exit
 */
-void input(vector<vector<string>>& grammar) {
+void input(vector<vector<string>>& grammar, vector<string>& input_string) {
 	string buf;
 	string input;
 	while (getline(cin, input) && input != "exit") {
@@ -45,6 +46,39 @@ void input(vector<vector<string>>& grammar) {
 		}
 		grammar.push_back(newRow);
 	}
+	string str;
+	while (cin >> str && str != "exit") {
+		input_string.push_back(str);
+	}
+}
+void input_by_file(vector<vector<string>>& grammar, string filename) {
+	ifstream fcin;
+	fcin.open(filename);
+	string buf;
+	string input;
+	while (getline(fcin, input) && !fcin.eof()) {
+		if (input != "exit") {
+			stringstream ss(input);
+			vector<string> newRow;
+			while (ss >> buf) {
+				newRow.push_back(buf);
+			}
+			grammar.push_back(newRow);
+		}
+		else {
+			continue;
+		}
+	}
+	fcin.close();
+}
+void input_by_file(vector<string>& input_string, string filename) {
+	ifstream fcin;
+	fcin.open(filename);
+	string str;
+	while (fcin >> str && str != "exit") {
+		input_string.push_back(str);
+	}
+	fcin.close();
 }
 void output(vector < vector<string>>& grammar) {
 	for (auto iter = grammar.begin(); iter != grammar.end(); iter++) {
@@ -56,17 +90,20 @@ void output(vector < vector<string>>& grammar) {
 }
 int main() {
 	vector<vector<string> > grammar;
-	input(grammar);
-	LR1 ll(grammar);
 
 	vector<string> input_string;
-	string str;
-	while (cin >> str && str != "exit") {
-		input_string.push_back(str);
-	}
+	//input(grammar,input_string);
+	input_by_file(grammar, "input_grammar.txt");
+	input_by_file(input_string, "input_bunch.txt");
+	LR1 ll(grammar);
+	ll.print_grammar();
+	ll.print_ex_grammar();
+	ll.print_first();
+	ll.print_fllow();
+	ll.print_terminal_and_nonTerminal();
+	ll.print_DFA();
+	ll.print_parse_table();
 	if (ll.parse_string(input_string)) std::cout << "acc";
 	else std::cout << "can't acc";
-
-	//output(grammar);
 	return 0;
 }

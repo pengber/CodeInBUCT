@@ -3,7 +3,7 @@
 class LALR1 :public LR1 {
 protected:
 	void set_DFA();
-	void add(int status, vector<string> a);//把status替换新的flag标志穿
+	void add(int status, vector<string> a);//把status替换新的flag标志
 public:
 	LALR1(vector<vector<string>> grammar) :LR1(grammar) {
 		STATUS_ORDER = 0;
