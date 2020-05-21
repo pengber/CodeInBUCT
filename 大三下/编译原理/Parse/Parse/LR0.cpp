@@ -149,5 +149,6 @@ int main() {
 
 	if (ll.parse_string(input_string)) std::cout << "acc";
 	else std::cout << "can't acc";
+	getchar();
 	return 0;
 }

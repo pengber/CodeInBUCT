@@ -92,5 +92,6 @@ int main() {
 	ll.print_parse_table();
 	if (ll.parse_string(input_string)) std::cout << "acc";
 	else std::cout << "can't acc";
+	getchar();
 	return 0;
 }
